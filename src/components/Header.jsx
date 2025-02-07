@@ -4,11 +4,10 @@ const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <header className="bg-white shadow-md py-4 px-6 md:px-20 flex justify-between items-center">
+    <header className="bg-white shadow-md py-4 px-6 md:px-20 flex items-center">
       <h1 className="text-2xl font-bold text-red-500">Zysk</h1>
 
-      
-      <nav className="hidden md:flex space-x-8 text-gray-700 font-medium">
+      <nav className="hidden md:flex space-x-6 text-gray-700 font-medium ml-6">
         <a href="#" className="hover:text-blue-600">Home</a>
         <div className="relative group">
           <a href="#" className="hover:text-blue-600 flex items-center">
@@ -23,16 +22,14 @@ const Header = () => {
         <a href="#" className="hover:text-blue-600">Pricing</a>
       </nav>
 
-      
-      <div className="flex items-center space-x-4">
-        <img 
-          src="./assets/Avatar.png" 
-          alt="User Avatar" 
+      <div className="flex items-center space-x-4 ml-auto">
+        <img
+          src="./assets/Avatar.png"
+          alt="User Avatar"
           className="w-10 h-10 rounded-full border border-gray-300 object-cover"
         />
 
-      
-        <button 
+        <button
           className="md:hidden focus:outline-none"
           onClick={() => setIsOpen(!isOpen)}
         >
@@ -41,18 +38,6 @@ const Header = () => {
           </svg>
         </button>
       </div>
-
-    
-      {isOpen && (
-        <div className="absolute top-16 left-0 w-full bg-white shadow-md md:hidden">
-          <ul className="flex flex-col items-center space-y-4 py-4 text-gray-700 font-medium">
-            <li><a href="#" className="hover:text-blue-600">Home</a></li>
-            <li><a href="#" className="hover:text-blue-600">Products</a></li>
-            <li><a href="#" className="hover:text-blue-600">Resources</a></li>
-            <li><a href="#" className="hover:text-blue-600">Pricing</a></li>
-          </ul>
-        </div>
-      )}
     </header>
   );
 };
